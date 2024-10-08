@@ -1,0 +1,9 @@
+08/10/2024 14:00 -->
+    Added the first version to Github.
+    First version included CSS animations and simple javascript
+
+
+08/10/2024 16:00 -->
+    Second version added to Github
+    Removed CSS animations and began work on javascript animations instead
+    Organised previous javascript into functions to make it more readable

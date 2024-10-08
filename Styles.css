@@ -102,7 +102,9 @@ body{
     grid-row-gap: 20px;
 
     min-height: calc(100vh - 40px);
-    padding: 20px;
+    padding: 15px;
+
+    table-layout: fixed;
 }
     .tableTop,.tableBottomLeft,.tableBottomRight{
         border-radius: 15px;
@@ -110,17 +112,18 @@ body{
 
         
     }
-    .tableTop{
-        display: flex;
-        justify-content: center;
-        align-items: last baseline;
-        min-width: 70vw;
 
-        grid-column-start: 1;
-        grid-column-end: 3;
-        background-color: transparent;
-        overflow: hidden;
-    }
+.tableTop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: transparent;
+    overflow: hidden;
+
+}
 
 .tableBottomLeft{
     grid-column-start: 1;
@@ -133,19 +136,19 @@ body{
 
     padding: 20px;
 }
-.tBLBoxes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    background-color: rgba(127, 255, 212, 0.671);
-    border-radius: 15px;
-    
-    padding: 5%;
+    .tBLBoxes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: rgba(127, 255, 212, 0.671);
+        border-radius: 15px;
+        
+        padding: 5%;
 
-    font-size: 15px;
-}
+        font-size: 15px;
+    }
 
 #temperatureHeaderBox,#humidityHeaderBox,#feelsLikeHeaderBox,#visibilityHeaderBox{
     margin-bottom: 10%;
@@ -178,111 +181,4 @@ body{
 
 
 
-
-
-/*animation CSS*/
-@keyframes sunAnimation{
-    100%{transform: rotate(360deg);}
-    
-}
-
-@keyframes backgroundColorChange1{
-    0%{background-color: rgba(185, 76, 36, 0.692);}
-    45%{background-color: rgba(185, 76, 36, 0.692);}
-    55%{background-color: rgba(88, 177, 147, 0.671);}
-    95%{background-color: rgba(88, 177, 147, 0.671);}
-    100%{background-color: rgba(185, 76, 36, 0.692);}
-}
-@keyframes backgroundColorChange2{
-    0%{background-color: rgb(255, 153, 0);}
-    45%{background-color: rgb(255, 153, 0);}
-    55%{background-color: rgba(127, 255, 212, 0.671);}
-    95%{background-color: rgba(127, 255, 212, 0.671);}
-    100%{background-color: rgb(255, 153, 0);}
-}
-
-.rotatorContainer{
-    position: relative;
-    height: 60vh;
-    width: 60vw;
-    
-    top: 50%;
-    border-radius: 50%;
-    
-
-    transform-origin: center;
-    transform: rotate(180deg);
-    
-}
-
-.rotator{
-    height: inherit;
-    width: inherit;
-    animation: normal sunAnimation var(--duration) forwards var(--negative-delay) linear infinite;
-}
-
-.sun{
-
-    top: 42%;
-    left: -50px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-
-    background-color: rgb(255, 171, 45);
-    box-shadow: 0px 0px 200px 50px rgb(179, 40, 5), 0px 0px 400px 200px rgb(255, 139, 30);
-    
-    
-}
-.sunCore{
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color: rgb(255, 180, 66);
-    
-}
-
-
-.moon{
-    top: 42%;
-    right: -50px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-
-    background-color: rgb(232, 243, 243);
-    box-shadow: 0px 0px 30px 5px whitesmoke;
-
-    overflow: hidden;
-}
-.moonCore{
-    position: absolute;
-    width: 80%;
-    height: 80%;        
-
-    border-radius: 50%;
-
-    right: 25%;
-    background-color: rgb(226, 226, 226);
-}
-
-
-.tableBottomLeft,.tableBottomRight{
-    animation: normal backgroundColorChange1 var(--duration) forwards var(--negative-delay) linear infinite;
-}
-
-.tBLBoxes,.tBRBoxes{
-    animation: normal backgroundColorChange2 var(--duration) forwards var(--negative-delay) linear infinite;
-}
-
-.navigationBoxes:before{
-    animation: normal backgroundColorChange2 var(--duration) forwards var(--negative-delay) linear infinite;
-}
+/* Moving Parts */

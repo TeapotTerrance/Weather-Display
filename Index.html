@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="navigationBoxes" id="hamburgerIconContainer">
+            <div id="hamburger">
+                
+            </div>
+        </div>
+        <div class="navigationBoxes" id="sunIconContainer">
+            <div class="sunIcon"></div>
+        </div>
+        <div class="navigationBoxes"></div>
+        <div class="navigationBoxes"></div>
+        <div class="navigationBoxes"></div>
+    </div>
+
+    <div class="tableContainer">
+        <div class="table">
+
+            <div class="tableTop"> <!-- sun/moon animation + weather key word -->
+                <div class="rotatorContainer">
+                    <div class="rotator">
+
+                        <div class="sun">
+                            <div class="sunCore"></div>
+                        </div>
+
+                        <div class="moon">
+                            <div class="moonCore"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="tableBottomLeft"> <!-- temp + windspeed + humidity + visibility -->
+                <div class="tBLBoxes" id="temperature">
+                    <div id="temperatureHeaderBox">Temperature</div>
+                    <div id="temperatureNumberBox"></div>
+                </div>
+                <div class="tBLBoxes" id="humidity">
+                    <div id="humidityHeaderBox">Humidity</div>
+                    <div id="humidityNumberBox"></div>
+                </div>
+                <div class="tBLBoxes" id="feelsLike">
+                    <div id="feelsLikeHeaderBox">Feels Like</div>
+                    <div id="feelsLikeNumberBox"></div>
+                </div>
+                <div class="tBLBoxes" id="visibilty">
+                    <div id="visibilityHeaderBox">Visibility</div>
+                    <div id="visibilityNumberBox"></div>
+                </div>
+
+            </div> 
+
+            <div class="tableBottomRight">
+
+                <div class="tBRBoxes" id="sunriseTime"></div>
+                <div class="tBRBoxes" id="sunsetTime"></div>
+            </div>   <!-- 24 hour forecast -->
+
+        </div>
+    </div>
+    
+</body>
+<script src="Scripts.js"></script>
+</html>

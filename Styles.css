@@ -182,3 +182,7 @@ body{
 
 
 /* Moving Parts */
+
+#canvasSunMoon{
+    background-image: url(Images/Orbit\ Path.png);
+}

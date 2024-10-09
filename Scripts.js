@@ -93,40 +93,52 @@ root.style.setProperty("--negative-delay", startAnimation + "s");
 document.addEventListener("DOMContentLoaded",domLoaded,false);
 function domLoaded(){
 
-    
-
     const canvas = document.getElementById("canvasSunMoon");
     const ctx = canvas.getContext("2d");
     ctx.translate(canvas.width/2,canvas.height/2);
 
 
-    function ellipsePath(){
-        ctx.save();
-        ctx.beginPath();
-        ctx.ellipse(0, 0, 340, 50, Math.PI / 1, 0, 2 * Math.PI);
-        ctx.setLineDash([5,5]);
-        ctx.strokeStyle = "white";
-    
-        ctx.stroke();
-        ctx.restore();
-    };
-    ellipsePath();
+    const ellipseSpeed = 0.0001;
+    let radiusX = 340;
+    let radiusY = 50;
 
-    function drawSun(){
-        ctx.save();
+    function draw(){
+
+        //sun
         ctx.beginPath();
-        ctx.translate(0,0);
-        
+
+        ctx.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
+
+        ctx.shadowColor = "orange";
+        ctx.shadowBlur = 20;
         ctx.fillStyle = "orange";
-        ctx.arc(0, 0, 40, 0, 2*Math.PI, false);
+
+        const sunCurrentAngle = Date.now() * ellipseSpeed;
+        const sunEllipseX = radiusX * Math.cos(-sunCurrentAngle);
+        const sunEllipseY = radiusY * Math.sin(-sunCurrentAngle);
+
+        ctx.arc(sunEllipseX, sunEllipseY, 40, 0, 2*Math.PI, false);
+
+        ctx.fill()
+        
+
+       //moon
+        ctx.beginPath()
+        ctx.shadowColor = "white";
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = "white";
+
+        const moonCurrentAngle = Date.now() * ellipseSpeed;
+        const moonEllipseX = -(radiusX * Math.cos(-moonCurrentAngle));
+        const moonEllipseY = -(radiusY * Math.sin(-moonCurrentAngle));
+
+        ctx.arc(moonEllipseX, moonEllipseY, 40, 0, 2*Math.PI, false);
         ctx.fill();
-        ctx.restore();
+
+        requestAnimationFrame(draw)
         
     };
-    drawSun();
+    draw();
 
-    function drawMoon(){
-
-    }
 }
-
+    

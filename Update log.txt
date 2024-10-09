@@ -1,5 +1,5 @@
 08/10/2024 14:00 -->
-    Added the first version to Github.
+    Added the first version to Github
     First version included CSS animations and simple javascript
 
 
@@ -7,3 +7,9 @@
     Second version added to Github
     Removed CSS animations and began work on javascript animations instead
     Organised previous javascript into functions to make it more readable
+
+
+09/10/2024 11:00 -->
+    Third Verison added to Github
+    Sun and Moon orbiting animation added
+    Planning to enlarge prominent celestial body as well as sync the actuak time of day 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Weather Display</title>
 
     <link rel="stylesheet" href="Styles.css">
 </head>
@@ -27,24 +27,25 @@
         <div class="table">
 
             <div class="tableTop"> <!-- sun/moon animation + weather key word -->
+                <div id="timeOfDay"></div>
                 <canvas id="canvasSunMoon" width="900px" height="450px"></canvas>
             </div> 
 
             <div class="tableBottomLeft"> <!-- temp + windspeed + humidity + visibility -->
                 <div class="tBLBoxes" id="temperature">
-                    <div id="temperatureHeaderBox">Temperature</div>
+                    <div id="temperatureHeaderBox">TEMPERATURE</div>
                     <div id="temperatureNumberBox"></div>
                 </div>
                 <div class="tBLBoxes" id="humidity">
-                    <div id="humidityHeaderBox">Humidity</div>
+                    <div id="humidityHeaderBox">HUMIDITY</div>
                     <div id="humidityNumberBox"></div>
                 </div>
                 <div class="tBLBoxes" id="feelsLike">
-                    <div id="feelsLikeHeaderBox">Feels Like</div>
+                    <div id="feelsLikeHeaderBox">FEELS LIKE</div>
                     <div id="feelsLikeNumberBox"></div>
                 </div>
                 <div class="tBLBoxes" id="visibilty">
-                    <div id="visibilityHeaderBox">Visibility</div>
+                    <div id="visibilityHeaderBox">VISIBILITY</div>
                     <div id="visibilityNumberBox"></div>
                 </div>
 

@@ -67,27 +67,35 @@ fetch(apiURL)
     })
 
 
-//percentage of the day calculation
 
-var currentTime = new Date();
-let currentHours = currentTime.getHours();
-let currentMinutes = currentTime.getMinutes();
-let currentSeconds = currentTime.getSeconds();
 
-let currentHoursInSeconds = currentHours*60*60;
-let currentMinutesInSeconds = currentMinutes*60;
 
-let currentTimeInSeconds = currentHoursInSeconds + currentMinutesInSeconds + currentSeconds;
+function timeDiff(){ //calculate the current time in milliseconds
 
-console.log(currentTimeInSeconds);
-let startAnimation = -(86400-currentTimeInSeconds);
+    var now = new Date(),
+    then = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        6,0,0),
+    diff = now.getTime() - then.getTime(); // difference in milliseconds
+    return(diff);
+}
 
-let dayPercentage = (currentTimeInSeconds/86400)*100;
-console.log(dayPercentage);
-
-root = document.documentElement;
-root.style.setProperty("--negative-delay", startAnimation + "s");
-
+function currDate(){
+    today = new Date();
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    currDay = today.getDate();
+    currMonthName = months[today.getMonth()];
+    currMonth = today.getMonth();
+    currYear = today.getFullYear();
+    
+    todayFormatted = currDay + "/" + currMonth + "/" + currYear;
+    
+    timeOfDayHTML = document.getElementById("timeOfDay");
+    timeOfDayHTML.innerHTML = todayFormatted;
+    };
+currDate();
 
 //Animating the display
 document.addEventListener("DOMContentLoaded",domLoaded,false);
@@ -98,11 +106,12 @@ function domLoaded(){
     ctx.translate(canvas.width/2,canvas.height/2);
 
 
-    const ellipseSpeed = 0.0001;
-    let radiusX = 340;
+    const ellipseSpeed = 0.0001; // arbitrary number
+
+    let radiusX = 340; //ellipse measurements
     let radiusY = 50;
 
-    function draw(){
+    function draw(){ //drawing the sun and moon
 
         //sun
         ctx.beginPath();
@@ -113,11 +122,13 @@ function domLoaded(){
         ctx.shadowBlur = 20;
         ctx.fillStyle = "orange";
 
+        //const sunCurrentAngle = ((timeDiff()/86400000)*(2 * Math.PI));
         const sunCurrentAngle = Date.now() * ellipseSpeed;
-        const sunEllipseX = radiusX * Math.cos(-sunCurrentAngle);
-        const sunEllipseY = radiusY * Math.sin(-sunCurrentAngle);
+        const sunEllipseX = radiusX * Math.cos(sunCurrentAngle);
+        const sunEllipseY = radiusY * Math.sin(sunCurrentAngle);
 
         ctx.arc(sunEllipseX, sunEllipseY, 40, 0, 2*Math.PI, false);
+        
 
         ctx.fill()
         
@@ -128,9 +139,10 @@ function domLoaded(){
         ctx.shadowBlur = 10;
         ctx.fillStyle = "white";
 
+        //const moonCurrentAngle = ((timeDiff()/86400000)*(2 * Math.PI));
         const moonCurrentAngle = Date.now() * ellipseSpeed;
-        const moonEllipseX = -(radiusX * Math.cos(-moonCurrentAngle));
-        const moonEllipseY = -(radiusY * Math.sin(-moonCurrentAngle));
+        const moonEllipseX = -(radiusX * Math.cos(moonCurrentAngle));
+        const moonEllipseY = -(radiusY * Math.sin(moonCurrentAngle));
 
         ctx.arc(moonEllipseX, moonEllipseY, 40, 0, 2*Math.PI, false);
         ctx.fill();

@@ -12,4 +12,12 @@
 09/10/2024 11:00 -->
     Third Verison added to Github
     Sun and Moon orbiting animation added
-    Planning to enlarge prominent celestial body as well as sync the actuak time of day 
+    Planning to enlarge prominent celestial body as well as sync the actual time of day 
+
+
+15/10/2024 -->
+    Fourth version added to Github
+    Sun and moon orbiting in real time added
+    CSS changes to make the look feel more spacey
+    Planning to add custom made soun effects and implement geocoder API
+    

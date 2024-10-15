@@ -1,18 +1,20 @@
-:root{
-    --negative-delay:1000s;
-    --duration: 86400s;
+@font-face {
+    font-family: 'PixelMono';
+    src: url(/pixeloid-font/PixeloidMono-d94EV.ttf);
 }
 
 
 html{
-    font-family:monospace;
+    font-family:"PixelMono";
     color: rgb(255, 255, 255);
     letter-spacing: 2px;
+    background-image: url(/Images/Pixel-Sunshine.jpg);
+    background-size: cover;
     
 }
 
 body{
-    background-color: rgb(36, 36, 36);
+    background-color: rgba(36, 36, 36,0.7);
     margin: 0;
     padding: 0;  
 }
@@ -44,22 +46,22 @@ body{
         width: 50px;
 
         background-color: rgba(255, 255, 255, 0.541);
-        border-radius: 50%;
-        box-shadow: 0px 0px 15px rgb(12, 12, 12);
+        box-shadow: 0px 0px 0px 2px rgb(134, 134, 134);
 
         cursor: pointer;
 
         transition: box-shadow 200ms ease;
     }
     .navigationBoxes:hover{
-        box-shadow: 0px 0px 0px 20px rgb(12, 12, 12);
+        box-shadow: 0px 0px 0px 5px rgb(181, 67, 5);
+        
     }
     .navigationBoxes:before{
         position: absolute;
         content: "";
-        background-color: rgba(127, 255, 212, 0.671);
+        background-color: rgba(255, 255, 255, 0.8);
         transform: scale(0);
-        border-radius: 50%;
+        /*border-radius: 50%;*/
         width: 100%;
         height: 100%;
         transition: transform 150ms ease;
@@ -107,23 +109,42 @@ body{
     table-layout: fixed;
 }
     .tableTop,.tableBottomLeft,.tableBottomRight{
-        border-radius: 15px;
-        box-shadow: 0px 0px 15px rgb(5, 5, 5);
+        /*border-radius: 15px;
+        box-shadow: 0px 0px 15px rgb(5, 5, 5);*/
+
+        border: 2px rgb(96, 96, 96) dashed;
+        /*box-shadow: 2px 2px 5px rgb(182, 182, 182);*/
 
         
     }
 
 .tableTop{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: transparent;
+    background-image: linear-gradient(to top left, rgba(0,0,0,0) 40%, rgba(181, 67, 5, 0.8) 200%);
     overflow: hidden;
 
 }
+    #timeOfDay{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        
+        width: fit-content;
+        padding: 10px;
+
+        /*border-radius: 15px;*/
+        border: 2px rgb(96, 96, 96) dashed;
+
+        text-align: center;
+        font-size: 30px;
+
+    }
 
 .tableBottomLeft{
     grid-column-start: 1;
@@ -142,12 +163,11 @@ body{
         justify-content: center;
         align-items: center;
         
-        background-color: rgba(127, 255, 212, 0.671);
-        border-radius: 15px;
+        background-image: linear-gradient(to top left, rgba(171, 171, 171, 0), rgba(181, 67, 5, 0.8));
         
         padding: 5%;
 
-        font-size: 15px;
+        font-size: 12px;
     }
 
 #temperatureHeaderBox,#humidityHeaderBox,#feelsLikeHeaderBox,#visibilityHeaderBox{
@@ -171,8 +191,9 @@ body{
     justify-content: center;
     align-items: center;
     
-    background-color: rgba(127, 255, 212, 0.671);
-    border-radius: 15px;
+    /*background-color: rgba(181, 67, 5, 0.8);*/
+    background-image: linear-gradient(to top left, rgba(171, 171, 171, 0), rgba(181, 67, 5, 0.8) );
+
     
     padding: 5%;
 
